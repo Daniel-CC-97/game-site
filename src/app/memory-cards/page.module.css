@@ -1,0 +1,87 @@
+.container {
+    background-color: pink;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.cardsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease;
+    flex-basis: 20%;
+}
+
+.card.flipped .back {
+    transform: rotateY(90deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front {
+    background-color: blue;
+}
+
+.back {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.button {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal {
+    width: 75vw;
+    height: 75vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modal.gameOver {
+    background-color: red;
+}
+
+.modal.levelComplete {
+    background-color: green;
+}
